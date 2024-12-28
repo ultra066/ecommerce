@@ -1,0 +1,143 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Account</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="{% static 'store/css/stylesheet.css' %}">
+<style>
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        overflow-x: hidden;
+    }
+    .container {
+        padding-top: 7rem;
+        margin-bottom: 5rem;
+    }
+    .profile-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        border-radius: 25px;
+        background-color: #f0f0f0;
+        padding: 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        width: 80%;
+        margin: 0 auto;
+        position: relative;
+    }
+    .profile-header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    .profile-header h2 {
+        font-size: 20px;
+    }
+    .profile-header img {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+    .student-info {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+    }
+    table {
+        border-collapse: collapse;
+        width: 100%;
+        background: whitesmoke;
+        table-layout: fixed;
+    }
+    th, td {
+        padding: 8px;
+        text-align: left;
+        border: 1px solid #e2e9e1;
+    }
+    thead {
+        background-color: #333;
+        color: white;
+    }
+    .edit {
+        background: #ffd800;
+        border: none;
+        color: white;
+        cursor: pointer;
+        margin-left: 5px;
+    }
+</style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo">
+            <img src="{% static 'store/img/logo.png' %}" alt="Logo" style="width: 60px; height: 60px;">
+        </div>
+        <ul>
+            <li><a href="{% url 'index' %}">Home</a></li>
+            <li><a href="{% url 'purchases' %}" class="active">My Purchases</a></li>
+            <li><a href="{% url 'cart' %}"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
+            <li><a href="{% url 'account' %}">Account</a></li>
+            <li><a href="{% url 'login' %}"><i class="fa fa-sign-in" aria-hidden="true"></i> Logout</a></li>
+        </ul>
+    </div>
+
+    <div class="container">
+        <div class="profile-container">
+            <div class="profile-header">
+                <h2>Account Information</h2>
+                <img src="{% static 'store/img/user_image_default.png' %}" alt="Default User Image">
+            </div>
+            <div class="student-info">
+                <div class="left-side">
+                    <p><b>User ID:</b> 12345</p>
+                    <p><b>Username:</b> Guest </button></p>
+                    <p><b>Password:</b> ********* </button></p>
+                </div>
+                <div class="right-side">
+                    <p><b>Phone Number:</b> 123-456-7890 </button></p>
+                    <p><b>Address:</b> 3-2</p>
+                </div>
+            </div>
+        </div>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-row">
+                <div class="footer-col">
+                    <h4>Batang Kalye Merch</h4>
+                    <ul>
+                        <li><a href="purchases.html">My Purchases</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>About us</h4>
+                    <ul>
+                        <li><a href="cart.html">My Cart</a></li>
+                        <li><a href="index.html">Check out now!</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Follow us</h4>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/batangkalye.1101"><i class="fa fa-facebook-f"></i></a>
+                        <a href=""><i class="fa fa-google"></i></a>
+                    </div>
+                </div>
+            </div>
+            <h3>2024 Batang Kalye</h3>
+        </div>
+    </footer>
+
+    <script src="{% static 'store/js/script.js' %}"></script>
+</body>
+</html>
