@@ -1,0 +1,495 @@
+@font-face {
+    font-family: 'Sifonn';
+    src:  url('font/SIFONN_BASIC.otf') format('OpenType');
+    }
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "Abhaya Libre", sans-serif;
+    box-sizing: border-box;
+
+}
+.container{
+    width: 100%;
+    height: 100vh;
+    background-position: center;
+    background-size: cover;
+}
+/*NAV-BAR*/
+.logo img {
+    max-width: 100px; /* Adjust the value as needed */
+    height: auto; /* Ensures the aspect ratio is maintained */
+    margin-left: 50px; /* Adjust the margin as needed for spacing */
+}
+.navbar{
+    width: 100%;
+    z-index: 2;
+    background-color:#333;
+    position: fixed;
+    height: 8%;
+    margin: auto;
+    padding: 35px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    }
+
+.navbar ul li{
+    list-style: none;
+    display: inline-block;
+    margin: 0 20px;
+    position: relative;
+}
+.navbar ul li a{
+    text-decoration: none;
+    color: #f4f4f4;
+    text-transform: uppercase;
+
+}
+.navbar ul li a::after{
+    content: '';
+    height: 3px;
+    width: 0;
+    background: #ffd800;
+    position: absolute;
+    bottom: -5px;   
+    top: 10;
+    overflow-y: 0;
+    left: 0;
+    transition: all 0.5s ease;
+}
+.navbar a:hover,
+.navbar a.active{
+   transform: translateY(5px);
+    transition: all .5s ease;
+    overflow-y: 0;
+}
+.navbar ul li a:hover::after{
+ width: 100%;
+ overflow-y: 0;
+}
+/*FOOTER*/
+.footer{
+    background-color: #24262b;
+    padding: 70px 0;
+    line-height: 1.5;
+    z-index: 1;
+    margin-top: 15px;
+    font-family: 'Poppins', sans-serif;
+    }
+    .footer-container{
+    max-width: 1170px;
+    margin: auto;
+    }
+    .footer-container h3{
+        font-size: 15px;
+        font-family:'Poppins' ;
+    }
+    .footer ul{
+    list-style-type: none;
+    }
+    .footer-col{
+    width: 25%;
+    padding: 0 15px;
+    }
+    .footer-row{
+    display: flex;
+    flex-wrap: wrap;
+    }
+    .footer-col h4{
+    font-size: 18px;
+    color: #ffffff;
+    text-transform: capitalize;
+    margin-bottom: 35px;
+    font-weight: 500;
+    position: relative; /* For it to not move */
+    }
+    .footer-col h4::before{ /*Before the h4 on the footer*/
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    background-color: #e91e63;
+    height: 2px;
+    box-sizing: border-box; /*If you set box-sizing: border-box; on an element, padding and border are included in the width and height*/
+    width: 50px;
+    }
+    .footer-col ul li{
+    margin-bottom: 10px;
+    }
+    .footer-col ul li a{
+    font-size: 16px;
+    text-transform: capitalize; /*in order to transform the text to capital*/
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 300;
+    color: #bbbbbb;
+    display: block;
+    transition: all 0.3s ease;/* For the link to transition .3 secs and ease for smoothness */
+    }
+    .footer-col ul li a:hover{/*Whenever u hover on the list on the footer*/
+    color: #ffffff;
+    padding-left: 10px;
+    }
+    .footer-col .social-links a{
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    background-color: rgba(255, 255, 255, 0.2);
+    margin:0 10px 10px 0;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 50%;
+    color: #ffffff;
+    transition: all 0.3s ease;
+    }
+    .footer-col .social-links a:hover{
+    color: #24262b;
+    background-color: #ffffff;
+    }
+    .footer h3{
+        text-align: center;
+        padding-top: 2rem;
+        margin-left: 2rem;
+        color: #f4f4f4;
+    }
+    .left-side,
+.right-side {
+    width: 45%;
+}
+
+.left-side p,
+.right-side p {
+    margin: 5px 0;
+    color: #666;
+}
+
+.right-side p:nth-child(1) {
+    font-weight: bold;
+}
+.profile-container .profile-header img{
+      width:300px; /* Adjust image size as needed */
+            height: 300px; /* Adjust image size as needed */
+}
+ .user-image {
+        padding-top: 2rem;
+            margin-bottom: 20px;
+            position: relative;
+        }
+        .user-image img {
+            width:300px; /* Adjust image size as needed */
+            height: 300px; /* Adjust image size as needed */
+            border-radius: 50%;
+            object-fit: cover;
+            box-shadow:20px 20px 30px rgba(0, 0, 0, 0.02);
+            border: none; /* Optional: Add border around image */
+        }
+        .edit-button {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            background-color: #ffd800;
+            color: white;
+            border: none;
+            padding: 5px 5px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 14px;
+            transition: background-color 0.3s ease;
+        }
+        .edit-button:hover {
+            background-color: #ffd800;
+        }
+
+/* Index */   
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    /* Adjust navbar for smaller screens */
+    .navbar {
+        flex-direction: column;
+        height: auto;
+        padding: 10px 0;
+    }
+
+    .navbar ul {
+        display: none; /* Initially hide the buttons */
+        flex-direction: column; /* Stack buttons vertically */
+        align-items: center;
+        padding: 0;
+        opacity: 0;
+    }
+
+    .navbar ul li {
+        margin: 10px 0; /* Adjust spacing for mobile */
+    }
+
+    /* Show nav buttons on hover */
+    .navbar:hover ul {
+        display: flex; /* Make buttons visible on hover */
+        opacity: 1;
+    }
+
+    /* Center and resize the content */
+    .row {
+        flex-direction: column;
+        text-align: center;
+        margin: 0 1rem;
+    }
+
+    .col {
+        margin: 1rem 0;
+        text-align: center;
+        position: relative;
+    }
+
+    .col h1 {
+        font-size: 36px;
+        line-height: 1.2;
+        margin: 1rem 0;
+    }
+
+    .col p {
+        font-size: 14px;
+        margin-bottom: 1rem;
+    }
+
+    .btn-content {
+        width: 100%;
+        padding: 10px 0;
+        margin: 1rem auto;
+    }
+
+    /* Hide the image in .col for mobile */
+    .col img {
+        display: none; /* Hide the image */
+    }
+
+    /* Featured Products */
+    #product1 .pro-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #product1 .pro {
+        width: 90%;
+        max-width: 300px;
+    }
+
+    #product1 .pro img {
+        height: auto;
+    }
+
+    /* Footer adjustments */
+    .footer-row {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-col {
+        width: 100%;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    .footer-col ul li a {
+        font-size: 14px;
+    }
+}
+
+/* cart */
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    /* Navbar Adjustments */
+    .navbar {
+        flex-direction: column;
+        height: auto;
+        padding: 10px 0;
+    }
+
+    .navbar ul {
+        display: none; /* Initially hide the buttons */
+        flex-direction: column; /* Stack buttons vertically */
+        align-items: center;
+        padding: 0;
+        opacity: 0;
+    }
+
+    .navbar ul li {
+        margin: 10px 0; /* Adjust spacing for mobile */
+    }
+
+    /* Show nav buttons on hover */
+    .navbar:hover ul {
+        display: flex; /* Make buttons visible on hover */
+        opacity: 1;
+    }
+
+    /* Cart Section */
+    #cart {
+        padding: 1rem;
+        width: 100%;
+    }
+
+    #cart h1 {
+        text-align: center;
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+
+    /* Table adjustments */
+    #cart table {
+        display: none; /* Hide table on mobile */
+    }
+
+    /* Adjust cart rows to display as columns */
+    #cart table, #cart table thead, #cart table tbody {
+        width: 100%;
+        display: block;
+    }
+
+    #cart table tbody {
+        display: block;
+    }
+
+    #cart table tbody tr {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 15px;
+        border-bottom: 1px solid #e2e9e1;
+        padding: 10px 0;
+    }
+
+    #cart table td {
+        width: 100%;
+        padding: 10px;
+        font-size: 14px;
+        text-align: left;
+    }
+
+    #cart table td:nth-child(1),
+    #cart table td:nth-child(2),
+    #cart table td:nth-child(3),
+    #cart table td:nth-child(4),
+    #cart table td:nth-child(5),
+    #cart table td:nth-child(6) {
+        width: auto;
+        text-align: left;
+    }
+
+    /* Show cart items in block format */
+    .cart-item {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .cart-item img {
+        width: 80px;
+        margin-bottom: 10px;
+    }
+
+    /* Button styling for mobile */
+    .btn-content {
+        width: 100%;
+        padding: 12px 0;
+        text-align: center;
+        margin: 20px 0;
+        font-size: 16px;
+        border-radius: 25px;
+        font-weight: bold;
+        border: solid 2px black;
+        background: transparent;
+        color: black;
+        cursor: pointer;
+    }
+
+    /* Modal adjustments for mobile */
+    .modal-content {
+        width: 80%;
+        margin: 10% auto;
+    }
+
+    #subTotal {
+        width: 100%;
+        margin-bottom: 30px;
+        padding: 20px;
+    }
+
+    #subTotal table td {
+        width: 50%;
+        padding: 10px;
+    }
+
+    /* Footer adjustments for mobile */
+    .footer-row {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-col {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .footer-col ul li a {
+        font-size: 14px;
+    }
+}
+
+/* Remove Button Design */
+#cart table td button.remove-btn {
+    background-color: red;
+    color: white;
+    font-size: 14px;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#cart table td button.remove-btn:hover {
+    background-color: darkred;
+}
+
+/* Modal Adjustments for Responsiveness */
+@media (max-width: 768px) {
+    /* Modal width adjustments */
+    .modal-content {
+        width: 80%; /* Adjust modal width */
+        margin: 10% auto;
+        padding: 20px;
+    }
+
+    /* Modal Buttons */
+    .modal-buttons button {
+        font-size: 14px;  /* Smaller font size for buttons */
+        padding: 8px 16px; /* Smaller padding */
+        border-radius: 5px;
+    }
+
+    /* Button colors */
+    .modal-buttons #confirmCheckout {
+        background-color: #28a745;
+        color: #fff;
+    }
+
+    .modal-buttons #cancelCheckout {
+        background-color: #dc3545;
+        color: #fff;
+    }
+
+    .modal-buttons button:hover {
+        opacity: 0.8;
+    }
+}
+
+/* Additional Adjustments for Mobile */
+@media (max-width: 768px) {
+    .modal-buttons button {
+        font-size: 14px;
+        padding: 10px 15px;
+        margin: 10px;
+    }
+}
